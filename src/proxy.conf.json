@@ -1,0 +1,11 @@
+{
+  "/cclproxy/*": {
+    "target": "http://phsacdeanp.cerncd.com/discern/b0783.phsa_cd.cerncd.com/mpages/reports",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/cclproxy": ""
+    }
+  }
+}
