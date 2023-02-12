@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { mPageService } from "@clinicaloffice/clinical-office-mpage";
+import { AppointmentDataService } from './appointment-data.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     public activatedRoute: ActivatedRoute,
-    public mPage: mPageService
+    public mPage: mPageService,
+    public appointmentDS : AppointmentDataService
   ) { }
 
   ngOnInit(): void {
@@ -27,8 +29,8 @@ export class AppComponent implements OnInit {
       this.mPage.setMaxInstances(2, true, 'CHART');
 
       // Add your initialization code here - do not place outside setTimeout function
+      this.appointmentDS.loadPreferences();
     }, 0);
-
   }
 
 }

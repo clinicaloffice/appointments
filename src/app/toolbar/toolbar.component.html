@@ -1,0 +1,44 @@
+<mat-toolbar class="toolbar">
+
+    <!-- Date Range -->
+    <mpage-select label="Date Range" [(ngModel)]="appointmentDS.prompts.dateType" [values]="dateTypes" class="prompt-date"></mpage-select>
+    <ng-container *ngIf="appointmentDS.prompts.dateType === 'DATE'">
+        <mpage-calendar label="From Date" [(ngModel)]="appointmentDS.prompts.fromDate" class="prompt-date"></mpage-calendar>
+        <mpage-calendar label="To Date" [(ngModel)]="appointmentDS.prompts.toDate" class="prompt-date"></mpage-calendar>
+    </ng-container>
+
+    <!-- Appointment Type -->
+    <mpage-select label="Appointment Type" [(ngModel)]="appointmentDS.prompts.appointmentType" [codeSet]="14230"
+        [multiple]="true" [searchable]="true" [allOption]="true" class="prompt" #apptType></mpage-select>
+
+    <!-- Resource -->
+    <mpage-select label="Resource" [(ngModel)]="appointmentDS.prompts.resource" [codeSet]="14231"
+        [multiple]="true" [searchable]="true" [allOption]="true" class="prompt"></mpage-select>
+
+    <!-- Location -->
+    <mpage-tree label="Location" [(ngModel)]="appointmentDS.prompts.location"
+        scriptParams='"maxViewLevel":"UNIT"' class="prompt"></mpage-tree>
+
+    <!-- Sch State -->
+    <mpage-select label="Sch State" [(ngModel)]="appointmentDS.prompts.schState" [codeSet]="14233" [multiple]="true"
+        [allOption]="true" class="prompt"></mpage-select>
+
+    <!-- Run Button -->
+    <button mat-icon-button title="Run" (click)="appointmentDS.loadAppointments()" [disabled]="appointmentDS.loading">
+        <mat-icon>play_arrow</mat-icon>
+    </button>
+
+    <!-- Clear Prompts -->
+    <button mat-icon-button title="Clear Prompts" (click)="appointmentDS.clearPrompts()">
+        <mat-icon>clear_all</mat-icon>
+    </button>
+
+
+    <!-- Space between prompts and save button -->
+    <span class="space-between"></span>
+
+    <button mat-icon-button title="Save user preferences" (click)="appointmentDS.savePreferences()">
+        <mat-icon>save</mat-icon>
+    </button>
+
+</mat-toolbar>

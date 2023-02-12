@@ -1,5 +1,5 @@
 {
-  "name": "edge-mpage",
+  "name": "appointments",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -15,7 +15,6 @@
     "@angular/common": "^14.0.2",
     "@angular/compiler": "^14.0.2",
     "@angular/core": "^14.0.2",
-    "@angular/flex-layout": "^13.0.0-beta.38",
     "@angular/forms": "^14.0.2",
     "@angular/material": "^14.0.2",
     "@angular/material-moment-adapter": "^14.0.2",

@@ -1,2 +1,22 @@
 // * Import theme from theme generator *//
 @import "theme";
+
+.toolbar {
+    font-size: 0.8rem;
+}
+
+.space-between {
+    flex: 1 1 auto;
+}
+
+.prompt, .prompt-date {
+    padding-right: 8px;
+}
+
+.prompt {
+    width: 13rem;
+}
+
+.prompt-date {
+    width: 7rem;
+}

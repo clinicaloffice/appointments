@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'edge-mpage'`, () => {
+  it(`should have as title 'appointments'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('edge-mpage');
+    expect(app.title).toEqual('appointments');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('edge-mpage app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('appointments app is running!');
   });
 });
